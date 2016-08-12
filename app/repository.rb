@@ -1,13 +1,10 @@
-require 'elasticsearch'
-require 'elasticsearch/persistence'
-
 class Repository
   include Elasticsearch::Persistence::Repository
 
   index 'test_post_index'
   klass Post
 
-  client Elasticsearch::Client.new
+  client Elasticsearch::Client.new(port: ES_PORT, host: ES_HOST)
 
   def serialize(post)
     {

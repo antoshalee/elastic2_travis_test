@@ -9,4 +9,5 @@ gem 'elasticsearch-persistence'
 
 group :test do
   gem 'rspec'
+  gem 'elasticsearch-extensions', '0.0.20'
 end
