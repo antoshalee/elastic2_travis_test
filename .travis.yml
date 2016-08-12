@@ -1,3 +1,13 @@
 language: ruby
+
+sudo: false
+
 rvm:
   - 2.3.1
+
+addons:
+  apt:
+    sources:
+      - elasticsearch-2.1
+    packages:
+      - elasticsearch
