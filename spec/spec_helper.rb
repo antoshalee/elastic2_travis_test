@@ -20,7 +20,7 @@ RSpec.configure do |config|
       path_logs: "tmp",
       path_work: "tmp",
       path_data: "tmp/elasticsearch_test",
-      command: "elasticsearch"
+      command: "/tmp/elasticsearch/bin/elasticsearch"
     ) unless Elasticsearch::Extensions::Test::Cluster.running?(on: ES_PORT)
   end
 
