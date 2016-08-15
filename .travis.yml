@@ -2,6 +2,10 @@ language: ruby
 
 sudo: false
 
+cache:
+  directories:
+    - elasticsearch
+
 rvm:
   - 2.3.1
 
@@ -11,5 +15,5 @@ env:
     - ES_BIN=elasticsearch/bin/elasticsearch
 
 before_install:
-  - "mkdir ${TRAVIS_BUILD_DIR}/elasticsearch"
+  - "mkdir -p ${TRAVIS_BUILD_DIR}/elasticsearch"
   - "wget -O - https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/${ES_VERSION}/elasticsearch-${ES_VERSION}.tar.gz | tar xz --directory=${TRAVIS_BUILD_DIR}/elasticsearch --strip-components=1"
