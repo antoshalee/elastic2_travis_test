@@ -8,8 +8,8 @@ rvm:
 env:
   global:
     - ES_VERSION=2.2.0
+    - ES_COMMAND=/tmp/elasticsearch/bin/elasticsearch
 
 before_install:
-  - "mkdir -p ${HOME}/elasticsearch"
-  - "wget -O - https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/${ES_VERSION}/elasticsearch-${ES_VERSION}.tar.gz | tar xz --directory=${HOME}/elasticsearch --strip-components=1"
-  - "alias elasticsearch=${HOME}/elasticsearch/bin/elasticsearch"
+  - "mkdir -p /tmp/elasticsearch"
+  - "wget -O - https://download.elasticsearch.org/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/${ES_VERSION}/elasticsearch-${ES_VERSION}.tar.gz | tar xz --directory=/tmp/elasticsearch --strip-components=1"

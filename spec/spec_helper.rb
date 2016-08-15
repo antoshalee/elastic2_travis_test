@@ -14,13 +14,15 @@ RSpec.configure do |config|
   end
 
   config.before(:each) do
+    es_command = ENV['ES_COMMAND'] || 'elasticsearch'
+
     Elasticsearch::Extensions::Test::Cluster.start(
       nodes: 1,
       port: ES_PORT,
       path_logs: "tmp",
       path_work: "tmp",
       path_data: "tmp/elasticsearch_test",
-      command: "elasticsearch"
+      command: es_command
     ) unless Elasticsearch::Extensions::Test::Cluster.running?(on: ES_PORT)
   end
 
