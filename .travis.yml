@@ -6,8 +6,9 @@ rvm:
   - 2.3.1
 
 env:
-  - ES_VERSION=2.2.0
-  - ES_BIN=elasticsearch/bin/elasticsearch
+  global:
+    - ES_VERSION=2.2.0
+    - ES_BIN=elasticsearch/bin/elasticsearch
 
 before_install:
   - "mkdir ${TRAVIS_BUILD_DIR}/elasticsearch"
